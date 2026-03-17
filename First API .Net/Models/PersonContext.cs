@@ -8,8 +8,8 @@
             object[,] arrayPerson = new object[,]
             {
                 {1, "Budi", "Jember", "Budi@gmail.com"},
-                {1, "Iwan", "BWI", "Iwan@gmail.com"},
-                {1, "Wati", "Lumajang", "Wati@gmail.com"},
+                {2, "Iwan", "BWI", "Iwan@gmail.com"},
+                {3, "Wati", "Lumajang", "Wati@gmail.com"},
             };
 
             for (int i = 0; i < arrayPerson.GetLength(0); i++)
@@ -24,6 +24,15 @@
             }
 
             return SebuahList;
+        }
+
+        public Person GetDataPerson(int id)
+        {
+            Person person = new Person();
+            List<Person> ListPerson = this.ListPerson();
+            Person TargetPerson = ListPerson.FirstOrDefault(p => p.IdPerson == id);
+
+            return TargetPerson;
         }
     }
 }
